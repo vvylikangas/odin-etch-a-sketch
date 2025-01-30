@@ -1,0 +1,14 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 1200px;
+  width: 1200px;
+}
+
+#square {
+  background-color: aqua;
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+}
