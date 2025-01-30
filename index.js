@@ -1,5 +1,16 @@
 const container = document.getElementById('container');
 
+function changeGrid() {
+  let newGridSize = prompt('Enter a new grid size between 1 and 100: ');
+  newGridSize = Number(newGridSize);
+  if (isNaN(newGridSize) || newGridSize < 1 || newGridSize > 100) {
+    alert('Grid size must be a number between 1 and 100!');
+    return;
+  }
+  container.innerHTML = '';
+  createSquares(newGridSize);
+}
+
 function changeSquareColor(event) {
   event.target.style.backgroundColor = 'grey';
 }
