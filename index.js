@@ -12,7 +12,17 @@ function changeGrid() {
 }
 
 function changeSquareColor(event) {
-  event.target.style.backgroundColor = 'grey';
+  // Generate random rgb color
+  let randIndex = () => {
+    return parseInt(Math.floor(Math.random() * 255) + 1);
+  };
+  let g = randIndex();
+  let r = randIndex();
+  let b = randIndex();
+  let rgb = `rgb(${r}, ${g}, ${b})`;
+  event.target.style.backgroundColor = rgb;
+
+  // Set opacity as 0.1 and increase opacity by 0.1 on each hover
   let currentOpacity = parseFloat(event.target.style.opacity) || 0.1;
   if (currentOpacity < 1) {
     event.target.style.opacity = currentOpacity + 0.1;
@@ -20,7 +30,7 @@ function changeSquareColor(event) {
 }
 
 function createSquares(gridSize) {
-  const maxGridSize = 1200;
+  const maxGridSize = 800;
   const squareSize = maxGridSize / gridSize;
 
   for (let i = 0; i < gridSize * gridSize; i++) {
