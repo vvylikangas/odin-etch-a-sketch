@@ -13,6 +13,10 @@ function changeGrid() {
 
 function changeSquareColor(event) {
   event.target.style.backgroundColor = 'grey';
+  let currentOpacity = parseFloat(event.target.style.opacity) || 0.1;
+  if (currentOpacity < 1) {
+    event.target.style.opacity = currentOpacity + 0.1;
+  }
 }
 
 function createSquares(gridSize) {
